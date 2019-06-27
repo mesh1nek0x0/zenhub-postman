@@ -105,7 +105,45 @@
 		},
 		{
 			"name": "Workspaces",
-			"item": []
+			"item": [
+				{
+					"name": "Get ZenHub Workspaces for a repository",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p2/repositories/{{REPO_ID}}/workspaces",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p2",
+								"repositories",
+								"{{REPO_ID}}",
+								"workspaces"
+							]
+						},
+						"description": "Gets all Workspaces containing repo_id"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
