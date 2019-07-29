@@ -57,6 +57,52 @@
 					"response": []
 				},
 				{
+					"name": "Set Issue Estimate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"estimate\": 8 }"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/{{REPO_ID}}/issues/:issue_number/estimate",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								"{{REPO_ID}}",
+								"issues",
+								":issue_number",
+								"estimate"
+							],
+							"variable": [
+								{
+									"key": "issue_number",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get the data for a specific issue."
+					},
+					"response": []
+				},
+				{
 					"name": "Get Issue Events",
 					"request": {
 						"method": "GET",
@@ -72,10 +118,6 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "https://{{API_HOST}}/p1/repositories/{{REPO_ID}}/issues/:issue_number/events",
 							"protocol": "https",
@@ -122,10 +164,6 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "https://{{API_HOST}}/p2/repositories/{{REPO_ID}}/workspaces",
 							"protocol": "https",
