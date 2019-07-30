@@ -97,8 +97,7 @@
 									"value": "1"
 								}
 							]
-						},
-						"description": "Get the data for a specific issue."
+						}
 					},
 					"response": []
 				},
@@ -142,6 +141,62 @@
 						"description": "Get the events for an issue."
 					},
 					"response": []
+				},
+				{
+					"name": "Move an Issue Between Pipelines",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pipeline_id\": \"5cd96e3295cdf0048f442983\",\n  \"position\": \"top\"\n}"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p2/workspaces/:workspace_id/repositories/:repo_id/issues/:issue_number/moves",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p2",
+								"workspaces",
+								":workspace_id",
+								"repositories",
+								":repo_id",
+								"issues",
+								":issue_number",
+								"moves"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": "{{WORKSPACE_ID}}"
+								},
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "issue_number",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Moves an issue between Pipelines in a Workspace"
+					},
+					"response": []
 				}
 			]
 		},
@@ -178,6 +233,51 @@
 							]
 						},
 						"description": "Gets all Workspaces containing repo_id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a ZenHub Board for a repository",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{API_HOST}}/p2/workspaces/:workspace_id/repositories/:repo_id/board",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p2",
+								"workspaces",
+								":workspace_id",
+								"repositories",
+								":repo_id",
+								"board"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": "{{WORKSPACE_ID}}"
+								},
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								}
+							]
+						},
+						"description": "Get ZenHub Board data for a repository (repo_id) within the Workspace (workspace_id)"
 					},
 					"response": []
 				}
