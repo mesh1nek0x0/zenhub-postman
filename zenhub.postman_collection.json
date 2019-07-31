@@ -282,6 +282,94 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Epics",
+			"item": [
+				{
+					"name": "Get Epics for a repository",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/epics",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"epics"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								}
+							]
+						},
+						"description": "Get all Epics for a repository"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Epic Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/epics/:epic_id",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"epics",
+								":epic_id"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "epic_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get the data for an Epic issue."
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
