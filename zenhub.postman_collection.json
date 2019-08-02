@@ -368,6 +368,55 @@
 						"description": "Get the data for an Epic issue."
 					},
 					"response": []
+				},
+				{
+					"name": "Add or remove issues to Epic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"remove_issues\": [{ \"repo_id\": {{REPO_ID}}, \"issue_number\": 3 }],\n  \"add_issues\": [\n    { \"repo_id\": {{REPO_ID}}, \"issue_number\": 5 },\n    { \"repo_id\": {{REPO_ID}}, \"issue_number\": 6 }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/epics/:issue_number/update_issues",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"epics",
+								":issue_number",
+								"update_issues"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "issue_number",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Bulk add or remove issues to an Epic. The result returns which issue was added or removed from the Epic."
+					},
+					"response": []
 				}
 			]
 		}
