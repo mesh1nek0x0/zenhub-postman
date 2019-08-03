@@ -161,7 +161,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"pipeline_id\": \"5cd96e3295cdf0048f442983\",\n  \"position\": \"top\"\n}"
+							"raw": "{\n  \"pipeline_id\": {{PIPELINE_REVIEW}},\n  \"position\": \"top\"\n}"
 						},
 						"url": {
 							"raw": "https://{{API_HOST}}/p2/workspaces/:workspace_id/repositories/:repo_id/issues/:issue_number/moves",
@@ -195,6 +195,56 @@
 							]
 						},
 						"description": "Moves an issue between Pipelines in a Workspace"
+					},
+					"response": []
+				},
+				{
+					"name": "Move an Issue Between Pipelines in the oldest Workspace",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pipeline_id\": {{PIPELINE_ICEBOX}},\n  \"position\": \"top\"\n}"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/issues/:issue_number/moves",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"issues",
+								":issue_number",
+								"moves"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "issue_number",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Moves an issue between Pipelines for a repository in your oldest Workspace"
 					},
 					"response": []
 				}
