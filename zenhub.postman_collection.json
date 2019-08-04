@@ -287,6 +287,44 @@
 					"response": []
 				},
 				{
+					"name": "Get the oldest ZenHub board for a repository",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/board",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"board"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get a ZenHub Board for a repository",
 					"request": {
 						"method": "GET",

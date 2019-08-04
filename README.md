@@ -13,6 +13,7 @@ Enabel to try API with GUI.
 support bellow APIs
 
 - [Issue APIs](https://github.com/ZenHubIO/API#issues)
+- [Workspaces APIs](https://github.com/ZenHubIO/API#workspaces)
 - :construction: [WIP]Epics APIs
 - :construction: [WIP]Milestones APIs
 - :construction: [WIP]Dependencies APIs
