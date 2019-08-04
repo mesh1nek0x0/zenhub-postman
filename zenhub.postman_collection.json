@@ -507,6 +507,113 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Milestones",
+			"item": [
+				{
+					"name": "Set milestone start date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"start_date\": \"2019-08-04T01:38:56.842Z\" }"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/milestones/:milestone_number/start_date",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"milestones",
+								":milestone_number",
+								"start_date"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "milestone_number",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get milestone start date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/milestones/:milestone_number/start_date",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"milestones",
+								":milestone_number",
+								"start_date"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "milestone_number",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "note\nonly set start date and get start date.\nmay be cannot create milestone (enable to create in GitHub)"
 		}
 	]
 }
