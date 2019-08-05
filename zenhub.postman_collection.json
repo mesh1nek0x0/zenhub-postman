@@ -505,6 +505,104 @@
 						"description": "Bulk add or remove issues to an Epic. The result returns which issue was added or removed from the Epic."
 					},
 					"response": []
+				},
+				{
+					"name": "Convert an Epic to an Issue",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/epics/:issue_number/convert_to_issue",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"epics",
+								":issue_number",
+								"convert_to_issue"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "issue_number",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Converts an Epic back to a regular issue."
+					},
+					"response": []
+				},
+				{
+					"name": "Convert Issue to Epic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"issues\": [\n    { \"repo_id\": {{REPO_ID}}, \"issue_number\": 6 }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/issues/:issue_number/convert_to_epic",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"issues",
+								":issue_number",
+								"convert_to_epic"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								},
+								{
+									"key": "issue_number",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Converts an issue to an Epic, along with any issues that should be part of it."
+					},
+					"response": []
 				}
 			]
 		},
@@ -613,7 +711,29 @@
 					"response": []
 				}
 			],
-			"description": "note\nonly set start date and get start date.\nmay be cannot create milestone (enable to create in GitHub)"
+			"description": "note\nonly set start date and get start date.\nmay be cannot create milestone (enable to create in GitHub)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8534d2b6-a44e-47fe-9d07-98949391507b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "349a2f7a-349c-4004-a1da-35ab48b7b1e1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	]
 }
