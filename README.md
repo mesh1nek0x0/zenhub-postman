@@ -16,7 +16,7 @@ support bellow APIs
 - [Workspaces APIs](https://github.com/ZenHubIO/API#workspaces)
 - [Epics APIs](https://github.com/ZenHubIO/API#epics)
 - [Milestones APIs](https://github.com/ZenHubIO/API#milestones)
-- :construction: [WIP]Dependencies APIs
+- [Dependencies APIs](https://github.com/ZenHubIO/API#dependencies)
 
 ---
 

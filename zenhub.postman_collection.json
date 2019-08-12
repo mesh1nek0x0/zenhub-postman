@@ -734,6 +734,138 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Dependencies",
+			"item": [
+				{
+					"name": "Get Dependencies for a Repository",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/dependencies",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"dependencies"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Dependency",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/repositories/:repo_id/dependencies",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"repositories",
+								":repo_id",
+								"dependencies"
+							],
+							"variable": [
+								{
+									"key": "repo_id",
+									"value": "{{REPO_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove a Dependency",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Authentication-Token",
+								"type": "text",
+								"value": "{{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"blocking\": {\n    \"repo_id\": {{REPO_ID}},\n    \"issue_number\": 6\n  },\n  \"blocked\": {\n    \"repo_id\": {{REPO_ID}},\n    \"issue_number\": 5\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{API_HOST}}/p1/dependencies",
+							"protocol": "https",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"p1",
+								"dependencies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
